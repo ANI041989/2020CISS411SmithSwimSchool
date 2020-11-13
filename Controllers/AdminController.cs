@@ -10,6 +10,7 @@ namespace Project1.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.AmeeTest = "AmeeTest";
             return View();
         }
     }
