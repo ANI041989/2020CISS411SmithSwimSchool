@@ -12,6 +12,7 @@ namespace Project1.Controllers
         [Authorize]
         public IActionResult Index()
         {
+            ViewBag.AmeeTest = "Amee Test";
             return View();
         }
     }
