@@ -5,11 +5,12 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Project1.Models;
 
 namespace Project1.Controllers
 {
-    [Authorize(Roles="Coach")]
+    // [Authorize(Roles="Coach")]
     public class CoachController : Controller
     {
         private readonly ApplicationDbContext db;
@@ -60,7 +61,28 @@ namespace Project1.Controllers
             return View("Index");
 
         }
-
+        public async Task<IActionResult> AllLesson()
+        {
+            var lesson = await db.Lessons.Include
+                (c => c.Coach).ToListAsync();
+            return View(lesson);
+        }
+        public async Task<IActionResult> EnrollLesson(int id)
+        {
+            var currentUserId = this.User.FindFirst
+                (ClaimTypes.NameIdentifier).Value;
+            var coachId = db.Coachs.FirstOrDefault
+            (s => s.UserId == currentUserId).CoachId;
+            Enrollment enrollment = new Enrollment
+            {
+                LessonId = id,
+                CoachId = coachId
+            };
+            db.Add(enrollment);
+            var lesson = await db.Lessons.FindAsync(enrollment.LessonId);
+            await db.SaveChangesAsync();
+            return View("Index");
+        }
         public IActionResult Index()
         {
             return View();
