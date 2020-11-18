@@ -80,6 +80,12 @@ namespace Project1.Controllers
 
             return View(vm);
         }
+
+         public IActionResult AllUser()
+        {
+            var users = db.Users.ToList();
+            return View(users);
+        }
        
 
     }
