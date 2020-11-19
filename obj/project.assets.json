@@ -5909,19 +5909,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\BukZacH\\.nuget\\packages\\": {}
+    "C:\\Users\\dapay\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\BukZacH\\Source\\Repos\\2020CISS411SmithSwimSchool\\Project1.csproj",
+      "projectUniqueName": "C:\\Users\\dapay\\Source\\Repos\\2020CISS411SmithSwimSchool3\\Project1.csproj",
       "projectName": "Project1",
-      "projectPath": "C:\\Users\\BukZacH\\Source\\Repos\\2020CISS411SmithSwimSchool\\Project1.csproj",
-      "packagesPath": "C:\\Users\\BukZacH\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\BukZacH\\Source\\Repos\\2020CISS411SmithSwimSchool\\obj\\",
+      "projectPath": "C:\\Users\\dapay\\Source\\Repos\\2020CISS411SmithSwimSchool3\\Project1.csproj",
+      "packagesPath": "C:\\Users\\dapay\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dapay\\Source\\Repos\\2020CISS411SmithSwimSchool3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\BukZacH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dapay\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
