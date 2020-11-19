@@ -256,3 +256,7 @@ C:\Users\ameei\Source\Repos\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\P
 C:\Users\ameei\Source\Repos\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Project1.genruntimeconfig.cache
 C:\Users\ameei\Source\Repos\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Account\AllUser.cshtml.g.cs
 C:\Users\ameei\Source\Repos\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Role\AddUserRole.cshtml.g.cs
+C:\Users\ameei\Source\Repos\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AddLesson.cshtml.g.cs
+C:\Users\ameei\Source\Repos\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AllLesson.cshtml.g.cs
+C:\Users\ameei\Source\Repos\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Coach\AllLesson.cshtml.g.cs
+C:\Users\ameei\Source\Repos\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Coach\WriteProgressReport.cshtml.g.cs
