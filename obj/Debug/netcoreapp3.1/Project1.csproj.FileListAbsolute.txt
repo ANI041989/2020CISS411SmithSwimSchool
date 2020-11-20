@@ -260,3 +260,5 @@ C:\Users\ameei\Source\Repos\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\R
 C:\Users\ameei\Source\Repos\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AllLesson.cshtml.g.cs
 C:\Users\ameei\Source\Repos\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Coach\AllLesson.cshtml.g.cs
 C:\Users\ameei\Source\Repos\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Coach\WriteProgressReport.cshtml.g.cs
+C:\Users\ameei\Source\Repos\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Role\AddRole.cshtml.g.cs
+C:\Users\ameei\Source\Repos\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Role\AllRole.cshtml.g.cs
