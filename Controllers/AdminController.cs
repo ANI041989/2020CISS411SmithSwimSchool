@@ -17,29 +17,27 @@ namespace Project1.Controllers
         {
             this.db = db;
         }
+
         public IActionResult AddLesson()
         {
-            Lesson lesson = new Lesson();
-            var currentUserId = this.User.FindFirst
-                (ClaimTypes.NameIdentifier).Value;
-            lesson.CoachId = db.Coachs.
-                SingleOrDefault(i => i.UserId ==
-                currentUserId).CoachId;
-            return View(lesson);
+            return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> AddLesson(Lesson lesson)
         {
             db.Add(lesson);
             await db.SaveChangesAsync();
-            return RedirectToAction("AllLesson");
+            return RedirectToAction("AddLesson");
         }
+
+
         public async Task<IActionResult> AllLesson()
         {
-            var lesson = await db.Lessons.Include
-                (c => c.Coach).ToListAsync();
+            var lesson = await db.Lessons.ToListAsync();
             return View(lesson);
         }
+
         public IActionResult Index()
         {
             ViewBag.AmeeTest = "AmeeTest";

@@ -61,28 +61,32 @@ namespace Project1.Controllers
             return View("Index");
 
         }
-        public async Task<IActionResult> AllLesson()
-        {
-            var lesson = await db.Lessons.Include
-                (c => c.Coach).ToListAsync();
-            return View(lesson);
-        }
-        public async Task<IActionResult> EnrollLesson(int id)
-        {
-            var currentUserId = this.User.FindFirst
-                (ClaimTypes.NameIdentifier).Value;
-            var coachId = db.Coachs.FirstOrDefault
-            (s => s.UserId == currentUserId).CoachId;
-            Enrollment enrollment = new Enrollment
-            {
-                LessonId = id,
-                CoachId = coachId
-            };
-            db.Add(enrollment);
-            var lesson = await db.Lessons.FindAsync(enrollment.LessonId);
-            await db.SaveChangesAsync();
-            return View("Index");
-        }
+
+        //public async Task<IActionResult> AllSession()
+        //{
+        //    var lesson = await db.Lessons.Include
+        //        (c => c.Coach).ToListAsync();
+        //    return View(lesson);
+        //}
+
+        //public async Task<IActionResult> EnrollLesson(int id)
+        //{
+        //    var currentUserId = this.User.FindFirst
+        //        (ClaimTypes.NameIdentifier).Value;
+        //    var coachId = db.Coachs.FirstOrDefault
+        //    (s => s.UserId == currentUserId).CoachId;
+        //    Enrollment enrollment = new Enrollment
+        //    {
+        //        LessonId = id,
+        //        CoachId = coachId
+        //    };
+        //    db.Add(enrollment);
+        //    var lesson = await db.Lessons.FindAsync(enrollment.LessonId);
+        //    await db.SaveChangesAsync();
+        //    return View("Index");
+        //}
+
+
         public IActionResult Index()
         {
             return View();
