@@ -10,8 +10,8 @@ using Project1.Models;
 namespace Project1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201117002711_M50")]
-    partial class M50
+    [Migration("20201202172520_M1")]
+    partial class M1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -240,6 +240,86 @@ namespace Project1.Migrations
                     b.ToTable("Coachs");
                 });
 
+            modelBuilder.Entity("Project1.Models.Enrollment", b =>
+                {
+                    b.Property<int>("EnrollmentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("ProgressReport")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SessionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SwimmerId")
+                        .HasColumnType("int");
+
+                    b.HasKey("EnrollmentId");
+
+                    b.HasIndex("SessionId");
+
+                    b.HasIndex("SwimmerId");
+
+                    b.ToTable("Enrollments");
+                });
+
+            modelBuilder.Entity("Project1.Models.Lesson", b =>
+                {
+                    b.Property<int>("LessonId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("SkillLevel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Tuition")
+                        .HasColumnType("float");
+
+                    b.HasKey("LessonId");
+
+                    b.ToTable("Lessons");
+                });
+
+            modelBuilder.Entity("Project1.Models.Session", b =>
+                {
+                    b.Property<int>("SessionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("CoachId")
+                        .HasColumnType("int");
+
+                    b.HasKey("SessionId");
+
+                    b.HasIndex("CoachId");
+
+                    b.ToTable("Sessions");
+                });
+
+            modelBuilder.Entity("Project1.Models.Swimmer", b =>
+                {
+                    b.Property<int>("SwimmerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("SwimmerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("SwimmerId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Swimmers");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -298,6 +378,60 @@ namespace Project1.Migrations
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Project1.Models.Enrollment", b =>
+                {
+                    b.HasOne("Project1.Models.Session", "Session")
+                        .WithMany("Enrollments")
+                        .HasForeignKey("SessionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Project1.Models.Swimmer", "Swimmer")
+                        .WithMany("Enrollments")
+                        .HasForeignKey("SwimmerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Session");
+
+                    b.Navigation("Swimmer");
+                });
+
+            modelBuilder.Entity("Project1.Models.Session", b =>
+                {
+                    b.HasOne("Project1.Models.Coach", "Coach")
+                        .WithMany("Sessions")
+                        .HasForeignKey("CoachId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Coach");
+                });
+
+            modelBuilder.Entity("Project1.Models.Swimmer", b =>
+                {
+                    b.HasOne("Project1.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Project1.Models.Coach", b =>
+                {
+                    b.Navigation("Sessions");
+                });
+
+            modelBuilder.Entity("Project1.Models.Session", b =>
+                {
+                    b.Navigation("Enrollments");
+                });
+
+            modelBuilder.Entity("Project1.Models.Swimmer", b =>
+                {
+                    b.Navigation("Enrollments");
                 });
 #pragma warning restore 612, 618
         }
