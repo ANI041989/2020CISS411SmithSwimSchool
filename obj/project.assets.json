@@ -5909,20 +5909,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dapay\\.nuget\\packages\\": {}
+    "C:\\Users\\jakem\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dapay\\Source\\Repos\\2020CISS411SmithSwimSchool4\\Project1.csproj",
+      "projectUniqueName": "C:\\Users\\jakem\\Source\\Repos\\2020CISS411SmithSwimSchool\\Project1.csproj",
       "projectName": "Project1",
-      "projectPath": "C:\\Users\\dapay\\Source\\Repos\\2020CISS411SmithSwimSchool4\\Project1.csproj",
-      "packagesPath": "C:\\Users\\dapay\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dapay\\Source\\Repos\\2020CISS411SmithSwimSchool4\\obj\\",
+      "projectPath": "C:\\Users\\jakem\\Source\\Repos\\2020CISS411SmithSwimSchool\\Project1.csproj",
+      "packagesPath": "C:\\Users\\jakem\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jakem\\Source\\Repos\\2020CISS411SmithSwimSchool\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\dapay\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\jakem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5933,6 +5938,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -5944,6 +5950,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
@@ -5982,7 +5989,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
