@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jakem\\source\\repos\\2020CISS411SmithSwimSchool\\Project1.csproj": {}
+    "C:\\Users\\jakem\\Source\\Repos\\2020CISS411SmithSwimSchool\\Project1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jakem\\source\\repos\\2020CISS411SmithSwimSchool\\Project1.csproj": {
+    "C:\\Users\\jakem\\Source\\Repos\\2020CISS411SmithSwimSchool\\Project1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jakem\\source\\repos\\2020CISS411SmithSwimSchool\\Project1.csproj",
+        "projectUniqueName": "C:\\Users\\jakem\\Source\\Repos\\2020CISS411SmithSwimSchool\\Project1.csproj",
         "projectName": "Project1",
-        "projectPath": "C:\\Users\\jakem\\source\\repos\\2020CISS411SmithSwimSchool\\Project1.csproj",
+        "projectPath": "C:\\Users\\jakem\\Source\\Repos\\2020CISS411SmithSwimSchool\\Project1.csproj",
         "packagesPath": "C:\\Users\\jakem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jakem\\source\\repos\\2020CISS411SmithSwimSchool\\obj\\",
+        "outputPath": "C:\\Users\\jakem\\Source\\Repos\\2020CISS411SmithSwimSchool\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

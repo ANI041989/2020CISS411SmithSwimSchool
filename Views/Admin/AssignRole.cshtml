@@ -1,5 +1,18 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@*@model Project1.ViewModels.RoleAddUserRoleViewModel
+<p>Pick a role for @Model.User.UserName</p>
+
+<form asp-controller="Role" asp-action="AssignRole"
+      method="post">
+    <div asp-validation-summary="All"></div>
+    <input asp-for="@Model.User.Id" type="hidden" />
+    <label asp-for="Role"></label>
+    <select asp-for="Role"
+            asp-items="@Model.RoleList"></select>
+    <br />
+    <button type="submit">Add Role</button>
+</form>
+<p>
+    <a asp-controller="Account" asp-action="AllUser">
+        Back to user list
+    </a>
+</p>*@
