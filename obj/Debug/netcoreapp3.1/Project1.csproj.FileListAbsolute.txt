@@ -181,4 +181,4 @@ C:\Users\jakem\source\repos\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\R
 C:\Users\jakem\source\repos\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Swimmer\AddProfile.cshtml.g.cs
 C:\Users\jakem\source\repos\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Swimmer\AllSession.cshtml.g.cs
 C:\Users\jakem\source\repos\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Swimmer\SwimmerHome.cshtml.g.cs
-C:\Users\jakem\Source\Repos\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AddUserRole.cshtml.g.cs
+C:\Users\jakem\Source\Repos\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AssignRole.cshtml.g.cs

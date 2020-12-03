@@ -1,7 +1,22 @@
-﻿@*@model Project1.ViewModels.RoleAddUserRoleViewModel
-<p>Pick a role for @Model.User.UserName</p>
+﻿//
 
-<form asp-controller="Role" asp-action="AssignRole"
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--@model Project1.ViewModels.RoleAddUserRoleViewModel-->
+@*<p>Pick a role for @Model.User.Id</p>*@
+
+<!--<form asp-controller="Role" asp-action="AddUserRole"
       method="post">
     <div asp-validation-summary="All"></div>
     <input asp-for="@Model.User.Id" type="hidden" />
@@ -9,10 +24,10 @@
     <select asp-for="Role"
             asp-items="@Model.RoleList"></select>
     <br />
-    <button type="submit">Add Role</button>
+    <button type="submit">Assign Role</button>
 </form>
 <p>
     <a asp-controller="Account" asp-action="AllUser">
         Back to user list
     </a>
-</p>*@
+</p>-->

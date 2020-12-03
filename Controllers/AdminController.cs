@@ -74,7 +74,7 @@ namespace Project1.Controllers
             return View(roles);
         }
 
-        public async Task<IActionResult> AddUserRole(string id)
+        public async Task<IActionResult> AssignRole(string id)
         {
             var roleDisplay = db.Roles.Select(x => new
             {
@@ -90,7 +90,7 @@ namespace Project1.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> AddUserRole
+        public async Task<IActionResult> AssignRole
            (RoleAddUserRoleViewModel vm)
         {
             var user = await userManager.FindByIdAsync(vm.User.Id);
@@ -99,7 +99,7 @@ namespace Project1.Controllers
                 AddToRoleAsync(user, role.Name);
             if (result.Succeeded)
             {
-                return RedirectToAction("AllUser", "Account");
+                return RedirectToAction("Account", "AllUser");
             }
             foreach (var error in result.Errors)
             {
