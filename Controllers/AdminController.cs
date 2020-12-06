@@ -120,6 +120,8 @@ namespace Project1.Controllers
         public IActionResult Index()
         {
             ViewBag.AmeeTest = "AmeeTest";
+            ViewBag.Test2 = "Test2";
+            ViewBag.Test3 = "Test3";
             return View();
         }
     }
