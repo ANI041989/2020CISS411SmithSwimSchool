@@ -383,3 +383,4 @@ C:\Users\ameei\Source\Repos\ANI041989\2020CISS411SmithSwimSchool\obj\Debug\netco
 C:\Users\ameei\Source\Repos\ANI041989\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Project1.dll
 C:\Users\ameei\Source\Repos\ANI041989\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Project1.pdb
 C:\Users\ameei\Source\Repos\ANI041989\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Project1.genruntimeconfig.cache
+C:\Users\ameei\Source\Repos\ANI041989\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index1.cshtml.g.cs

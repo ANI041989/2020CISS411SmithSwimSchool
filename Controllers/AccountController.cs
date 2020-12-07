@@ -47,7 +47,7 @@ namespace Project1.Controllers
                 if (result.Succeeded)
                 {
                     await signInManager.SignInAsync(user, false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index1", "Home");
                 }
                 else
                 {
