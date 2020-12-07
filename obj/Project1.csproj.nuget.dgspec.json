@@ -1,25 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jakem\\Source\\Repos\\2020CISS411SmithSwimSchool\\Project1.csproj": {}
+    "C:\\Users\\ameei\\source\\repos\\2020CISS411SmithSwimSchool\\Project1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jakem\\Source\\Repos\\2020CISS411SmithSwimSchool\\Project1.csproj": {
+    "C:\\Users\\ameei\\source\\repos\\2020CISS411SmithSwimSchool\\Project1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jakem\\Source\\Repos\\2020CISS411SmithSwimSchool\\Project1.csproj",
+        "projectUniqueName": "C:\\Users\\ameei\\source\\repos\\2020CISS411SmithSwimSchool\\Project1.csproj",
         "projectName": "Project1",
-        "projectPath": "C:\\Users\\jakem\\Source\\Repos\\2020CISS411SmithSwimSchool\\Project1.csproj",
-        "packagesPath": "C:\\Users\\jakem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jakem\\Source\\Repos\\2020CISS411SmithSwimSchool\\obj\\",
+        "projectPath": "C:\\Users\\ameei\\source\\repos\\2020CISS411SmithSwimSchool\\Project1.csproj",
+        "packagesPath": "C:\\Users\\ameei\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ameei\\source\\repos\\2020CISS411SmithSwimSchool\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\jakem\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\ameei\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"

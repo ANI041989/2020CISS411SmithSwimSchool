@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Project1.Models;
@@ -10,6 +11,7 @@ using Project1.ViewModels;
 
 namespace Project1.Controllers
 {
+    
     public class AccountController : Controller
     {
         private ApplicationDbContext db;
