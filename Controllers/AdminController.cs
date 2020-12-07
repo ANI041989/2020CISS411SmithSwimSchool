@@ -13,7 +13,7 @@ using Project1.ViewModels;
 
 namespace Project1.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private readonly ApplicationDbContext db;
@@ -120,6 +120,8 @@ namespace Project1.Controllers
         public IActionResult Index()
         {
             ViewBag.AmeeTest = "AmeeTest";
+            ViewBag.Test2 = "Test2";
+            ViewBag.Test3 = "Test3";
             return View();
         }
     }
