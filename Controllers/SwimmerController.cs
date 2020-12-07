@@ -9,7 +9,7 @@ using Project1.Models;
 
 namespace Project1.Controllers
 {
-    //[Authorize(Roles="Swimmer")]
+    [Authorize(Roles="Swimmer")]
     public class SwimmerController : Controller
     {
         private readonly ApplicationDbContext db;

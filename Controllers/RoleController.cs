@@ -11,7 +11,7 @@ using Project1.ViewModels;
 
 namespace Project1.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class RoleController : Controller
     {
         ApplicationDbContext db;

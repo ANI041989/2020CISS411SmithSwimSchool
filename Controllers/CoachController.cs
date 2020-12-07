@@ -10,7 +10,7 @@ using Project1.Models;
 
 namespace Project1.Controllers
 {
-    // [Authorize(Roles="Coach")]
+    [Authorize(Roles="Coach")]
     public class CoachController : Controller
     {
         private readonly ApplicationDbContext db;

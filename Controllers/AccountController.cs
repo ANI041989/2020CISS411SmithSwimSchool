@@ -70,20 +70,34 @@ namespace Project1.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await signInManager.PasswordSignInAsync(vm.Email, vm.Password, false, false); 
-                
+                var result = await signInManager.PasswordSignInAsync(vm.Email, vm.Password, false, false);
+
                 if (result.Succeeded)
-            {
-                return RedirectToAction("Index", "Home");
-            }
-            ModelState.AddModelError("", "Login Failure.");
+                {
+                    var user = await userManager.FindByEmailAsync(vm.Email);
+                    var roles = await userManager.GetRolesAsync(user);
+                    if (roles.Contains("Admin"))
+                    {
+                        return RedirectToAction("Index", "Admin");
+                    }
+                    else if (roles.Contains("Coach"))
+                    {
+                        return RedirectToAction("Index", "Coach");
+                    }
+                    else if (roles.Contains("Swimmer"))
+                    {
+                        return RedirectToAction("Index", "Swimmer");
+                    }
+                    return RedirectToAction("Index", "Home");
+                }
+                ModelState.AddModelError("", "Login Failure.");
             }
 
 
             return View(vm);
         }
 
-         public IActionResult AllUser()
+        public IActionResult AllUser()
         {
             var users = db.Users.ToList();
             return View(users);
