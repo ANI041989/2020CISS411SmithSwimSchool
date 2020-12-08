@@ -5909,23 +5909,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ameei\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\dapay\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ameei\\Source\\Repos\\ANI041989\\2020CISS411SmithSwimSchool\\Project1.csproj",
+      "projectUniqueName": "C:\\Users\\dapay\\Source\\Repos\\2020CISS411SmithSwimSchool5\\Project1.csproj",
       "projectName": "Project1",
-      "projectPath": "C:\\Users\\ameei\\Source\\Repos\\ANI041989\\2020CISS411SmithSwimSchool\\Project1.csproj",
-      "packagesPath": "C:\\Users\\ameei\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ameei\\Source\\Repos\\ANI041989\\2020CISS411SmithSwimSchool\\obj\\",
+      "projectPath": "C:\\Users\\dapay\\Source\\Repos\\2020CISS411SmithSwimSchool5\\Project1.csproj",
+      "packagesPath": "C:\\Users\\dapay\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dapay\\Source\\Repos\\2020CISS411SmithSwimSchool5\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ameei\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dapay\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5937,7 +5933,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -5949,7 +5944,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
@@ -5988,7 +5982,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
