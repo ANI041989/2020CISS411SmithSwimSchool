@@ -21,9 +21,10 @@
                     <td>
                         @{
 
-                            <a asp-controller="Coach"
-                               asp-action="AddSession">
-                                Add Session
+                            <a asp-controller="Swimmer"
+                               asp-action="EnrollSession"
+                               asp-route-id="@s.SessionId">
+                                Enroll this Session
                             </a>
 
 
