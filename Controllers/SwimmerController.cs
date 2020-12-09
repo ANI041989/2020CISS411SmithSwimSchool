@@ -10,7 +10,7 @@ using Project1.Models;
 
 namespace Project1.Controllers
 {
-    [Authorize(Roles="Swimmer")]
+  //  [Authorize(Roles="Swimmer")]
     public class SwimmerController : Controller
     {
         private readonly ApplicationDbContext db;
@@ -61,7 +61,7 @@ namespace Project1.Controllers
                 (enrollment.SessionId);
 
             await db.SaveChangesAsync();
-            return View("SwimmmerHome");
+            return View("Index");
         }
         public async Task<IActionResult> CheckGrade()
 		{
