@@ -18,9 +18,28 @@ namespace Project1.Controllers
         {
             this.db = db;
         }
+        public IActionResult AddProfile()
+        {
+            var currentUserId = this.User.FindFirst
+                (ClaimTypes.NameIdentifier).Value;
+            Swimmer swimmer = new Swimmer();
+            if (db.Swimmers.Any(i => i.UserId ==
+            currentUserId))
+            {
+                swimmer = db.Swimmers.FirstOrDefault
+                    (i => i.UserId == currentUserId);
+            }
+            else
+            {
+                swimmer.UserId = currentUserId;
+            }
+
+            return View(swimmer);
+
+        }
         [HttpPost]
-        public async Task<IActionResult> AddProfile
-            (Swimmer swimmer)
+        public async Task<IActionResult> AddProfile(Swimmer swimmer)
+            
         {
             var currentUserId = this.User.FindFirst
                 (ClaimTypes.NameIdentifier).Value;
