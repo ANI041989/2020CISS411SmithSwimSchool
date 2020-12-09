@@ -4,14 +4,14 @@
 @{
 }
 @model List<Project1.Models.Enrollment>
-<h2>Add a session to session</h2>
-<h3>Session: @Model[0].SessionId</h3>
-<form asp-controller="Coach" asp-action="WriteProgressReport"
+<h2>Add a lesson to session</h2>
+<h3>Lesson: @Model[0].LessonId</h3>
+<form asp-controller="Coach" asp-action="AddSession"
       method="post">
     <table border="1">
         <tr>
             <th></th>
-            <th>Session Id</th>
+            <th>Lesson ID</th>
         </tr>
         @for (int i = 0; i < Model.Count(); i++)
         {
@@ -22,7 +22,7 @@
                            type="hidden"
                            value="@Model[i].EnrollmentId" />
                 </td>
-                <td>@Model[i].SessionId</td>
+                <td>@Model[i].LessonId</td>
                 <td>
                     <input asp-for="@Model[i].Session" />
                 </td>
