@@ -12,7 +12,6 @@ namespace Project1.Models
         public string Bio { get; set; }
         public string UserId { get; set; }
 
-      
         public virtual ApplicationUser User { get; set; }
         public ICollection<Session> Sessions { get; set; }
     }
