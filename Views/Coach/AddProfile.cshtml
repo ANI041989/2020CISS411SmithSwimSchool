@@ -1,6 +1,6 @@
 ﻿@model Project1.Models.Coach
 <h2>Add Your Profile</h2>
-<form asp-controller="AddProfile">
+<form asp-controller="Coach" asp-action="AddProfile">
     <input asp-for="@Model.UserId" type="hidden" />
     <label asp-for="CoachName"></label>
     <input asp-for="CoachName" />

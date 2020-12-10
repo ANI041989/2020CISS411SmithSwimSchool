@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Project1.Models.Lesson>
 
-<p><a asp-action="AddLesson">Add a Lesson</a></p>
+<p><a asp-action="AddLesson">Add Session</a></p>
 @{
     if (Model.Count() < 1)
     {
@@ -11,12 +11,20 @@
         <h3>All Lessons</h3>
         <table border="1">
             <tr>
-                <th>Skill Levels</th>
+                <th>Skill Leves</th>
+                <th>Add Session</th>
             </tr>
             @foreach (var l in Model)
             {
                 <tr>
                     <td>@l.SkillLevel</td>
+                    <td>
+                        <a asp-controller="Coach"
+                           asp-action="AddSession"
+                           asp-route-id="@l.Sessions" >
+                            Add Session
+                        </a>
+                    </td>
                 </tr>
             }
         </table>

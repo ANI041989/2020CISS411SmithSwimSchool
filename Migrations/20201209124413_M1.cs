@@ -213,7 +213,11 @@ namespace Project1.Migrations
                 {
                     SessionId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CoachId = table.Column<int>(type: "int", nullable: false)
+                    CoachId = table.Column<int>(type: "int", nullable: false),
+                    StartDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EndDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SeatCapacity = table.Column<int>(type: "int", nullable: false),
+                    DailyStartTime = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
