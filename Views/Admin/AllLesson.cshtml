@@ -11,12 +11,14 @@
         <h3>All Lessons</h3>
         <table border="1">
             <tr>
-                <th>Skill Leves</th>
+                <th>Skill Level</th>
+                <th>Tuition</th>
             </tr>
             @foreach (var l in Model)
             {
                 <tr>
                     <td>@l.SkillLevel</td>
+                    <td>@l.Tuition</td>
                 </tr>
             }
         </table>
