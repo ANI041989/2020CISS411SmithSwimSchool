@@ -52,7 +52,6 @@ namespace Project1.Controllers
                 (ClaimTypes.NameIdentifier).Value;
             session.CoachId = db.Coachs.SingleOrDefault(i => i.UserId ==
             currentUserId).CoachId;
-            
             return View(session);
 
 
@@ -103,6 +102,7 @@ namespace Project1.Controllers
         [HttpPost]
         public async Task<IActionResult> AddSession(Session s)
         {
+            
             db.Add(s);
             await db.SaveChangesAsync();
             return RedirectToAction("Index", "Coach");

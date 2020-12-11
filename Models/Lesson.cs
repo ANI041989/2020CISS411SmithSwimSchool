@@ -12,5 +12,6 @@ namespace Project1.Models
         public double Tuition { get; set; }
 
         public ICollection<Session> Sessions { get; set; }
+       
     }
 }
