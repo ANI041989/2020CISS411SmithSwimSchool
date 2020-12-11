@@ -14,7 +14,7 @@ namespace Project1.Controllers
     
     public class AccountController : Controller
     {
-        private ApplicationDbContext db;
+        private readonly ApplicationDbContext db;
         private UserManager<ApplicationUser> userManager;
         private SignInManager<ApplicationUser> signInManager;
         private RoleManager<IdentityRole> roleManager;

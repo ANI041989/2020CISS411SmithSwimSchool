@@ -213,7 +213,8 @@ namespace Project1.Migrations
                 {
                     SessionId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CoachId = table.Column<int>(type: "int", nullable: false)
+                    CoachId = table.Column<int>(type: "int", nullable: false),
+                    SeatCapacity = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -250,6 +251,30 @@ namespace Project1.Migrations
                         column: x => x.SwimmerId,
                         principalTable: "Swimmers",
                         principalColumn: "SwimmerId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "LessonSession",
+                columns: table => new
+                {
+                    LessonsLessonId = table.Column<int>(type: "int", nullable: false),
+                    SessionsSessionId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LessonSession", x => new { x.LessonsLessonId, x.SessionsSessionId });
+                    table.ForeignKey(
+                        name: "FK_LessonSession_Lessons_LessonsLessonId",
+                        column: x => x.LessonsLessonId,
+                        principalTable: "Lessons",
+                        principalColumn: "LessonId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_LessonSession_Sessions_SessionsSessionId",
+                        column: x => x.SessionsSessionId,
+                        principalTable: "Sessions",
+                        principalColumn: "SessionId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -308,6 +333,11 @@ namespace Project1.Migrations
                 column: "SwimmerId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_LessonSession_SessionsSessionId",
+                table: "LessonSession",
+                column: "SessionsSessionId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Sessions_CoachId",
                 table: "Sessions",
                 column: "CoachId");
@@ -339,16 +369,19 @@ namespace Project1.Migrations
                 name: "Enrollments");
 
             migrationBuilder.DropTable(
-                name: "Lessons");
+                name: "LessonSession");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Sessions");
+                name: "Swimmers");
 
             migrationBuilder.DropTable(
-                name: "Swimmers");
+                name: "Lessons");
+
+            migrationBuilder.DropTable(
+                name: "Sessions");
 
             migrationBuilder.DropTable(
                 name: "Coachs");

@@ -9,7 +9,7 @@ namespace Project1.Controllers
 {
     public class HomeController : Controller
     {
-        [Authorize]
+       // [Authorize]
         public IActionResult Index()
         {
             ViewBag.AmeeTest = "Amee Test";

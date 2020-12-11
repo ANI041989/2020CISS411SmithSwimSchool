@@ -62,14 +62,50 @@ namespace Project1.Controllers
 
         }
 
-        //public async Task<IActionResult> AllSession()
+        public async Task<IActionResult> AllLesson()
+        {
+            var lesson = await db.Lessons.ToListAsync();
+            return View(lesson);
+        }
+
+
+        public IActionResult AddSession()
+        {
+            //Session session = new Session();
+            //var currentUserId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            //session.CoachId = db.Coachs.SingleOrDefault(i => i.UserId == currentUserId).CoachId;
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddSession(Session session)
+        {
+            db.Add(session);
+            await db.SaveChangesAsync();
+            return RedirectToAction("AllLesson", "Coach");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public async Task<IActionResult> AddSession()
         //{
-        //    var lesson = await db.Lessons.Include
+        //    var session = await db.Lessons.Include
         //        (c => c.Coach).ToListAsync();
-        //    return View(lesson);
+        //    return View(session);
         //}
 
-        //public async Task<IActionResult> EnrollLesson(int id)
+        //public async Task<IActionResult> EnrollSession(int id)
         //{
         //    var currentUserId = this.User.FindFirst
         //        (ClaimTypes.NameIdentifier).Value;

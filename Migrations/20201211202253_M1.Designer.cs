@@ -10,7 +10,7 @@ using Project1.Models;
 namespace Project1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201207164056_M1")]
+    [Migration("20201211202253_M1")]
     partial class M1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,6 +20,21 @@ namespace Project1.Migrations
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
+
+            modelBuilder.Entity("LessonSession", b =>
+                {
+                    b.Property<int>("LessonsLessonId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SessionsSessionId")
+                        .HasColumnType("int");
+
+                    b.HasKey("LessonsLessonId", "SessionsSessionId");
+
+                    b.HasIndex("SessionsSessionId");
+
+                    b.ToTable("LessonSession");
+                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -293,6 +308,9 @@ namespace Project1.Migrations
                     b.Property<int>("CoachId")
                         .HasColumnType("int");
 
+                    b.Property<int>("SeatCapacity")
+                        .HasColumnType("int");
+
                     b.HasKey("SessionId");
 
                     b.HasIndex("CoachId");
@@ -318,6 +336,21 @@ namespace Project1.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Swimmers");
+                });
+
+            modelBuilder.Entity("LessonSession", b =>
+                {
+                    b.HasOne("Project1.Models.Lesson", null)
+                        .WithMany()
+                        .HasForeignKey("LessonsLessonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Project1.Models.Session", null)
+                        .WithMany()
+                        .HasForeignKey("SessionsSessionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
