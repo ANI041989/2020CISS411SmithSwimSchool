@@ -38,43 +38,6 @@ namespace Project1.Controllers
             return View(coach);
 
         }
-
-        public async Task<IActionResult> AllLesson()
-        {
-            var lesson = await db.Lessons.ToListAsync();
-            return View(lesson);
-        }
-   
-        public IActionResult AddSession()
-        {
-            Session session = new Session();
-            var currentUserId = this.User.FindFirst
-                (ClaimTypes.NameIdentifier).Value;
-            session.CoachId = db.Coachs.SingleOrDefault(i => i.UserId ==
-            currentUserId).CoachId;
-            return View(session);
-
-
-            // Session session = new Session();
-            // var currentUserId = this.User.FindFirst
-            //(ClaimTypes.NameIdentifier).Value;
-            // session.CoachId = db.Coachs.FirstOrDefault
-            // (s => s.UserId == currentUserId).CoachId;
-
-            //db.Add(session);
-            //var lesson = await db.Lessons.FindAsync(enrollment.LessonId);
-            //await db.SaveChangesAsync();
-            //return View(session);
-            //Session s = new Session();
-            //var currentUserId = this.User.FindFirst
-            //    (ClaimTypes.NameIdentifier).Value;
-            //s.CoachId = db.Coachs.FirstOrDefault
-            //    (i => i.UserId == currentUserId).CoachId;
-            ////s.LessonId = db.Lessons.SingleOrDefault
-            ////    (i => i.LessonId == )
-            //return View(s);
-        }
-
         [HttpPost]
         public async Task<IActionResult> AddProfile
             (Coach coach)
@@ -99,36 +62,74 @@ namespace Project1.Controllers
 
         }
 
-        [HttpPost]
-        public async Task<IActionResult> AddSession(Session s)
+        public async Task<IActionResult> AllLesson()
         {
-            
-            db.Add(s);
-            await db.SaveChangesAsync();
-            return RedirectToAction("Index", "Coach");
+            var lesson = await db.Lessons.ToListAsync();
+            return View(lesson);
         }
 
-        //public async Task<IActionResult> AllSession()
+
+        public IActionResult AddSession()
+        {
+            Session session = new Session();
+            var currentUserId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            session.CoachId = db.Coachs.SingleOrDefault(i => i.UserId == currentUserId).CoachId;
+            return View(session);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddSession(Session session)
+        {
+            db.Add(session);
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index", "Instructor");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public async Task<IActionResult> AddSession()
         //{
-        //    var lesson = await db.Lessons.Include
+        //    var session = await db.Lessons.Include
         //        (c => c.Coach).ToListAsync();
-        //    return View(lesson);
+        //    return View(session);
         //}
 
-        //public async Task<IActionResult> EnrollLesson(int id)
+        //public async Task<IActionResult> EnrollSession(int id)
         //{
-        //var currentUserId = this.User.FindFirst
-        //    (ClaimTypes.NameIdentifier).Value;
-        //var coachId = db.Coachs.FirstOrDefault
-        //(s => s.UserId == currentUserId).CoachId;
-        //Enrollment enrollment = new Enrollment
-        //{
-        //    LessonId = id,
-        //    CoachId = coachId
-        //};
-        //db.Add(enrollment);
+        //    var currentUserId = this.User.FindFirst
+        //        (ClaimTypes.NameIdentifier).Value;
+        //    var coachId = db.Coachs.FirstOrDefault
+        //    (s => s.UserId == currentUserId).CoachId;
+        //    Enrollment enrollment = new Enrollment
+        //    {
+        //        LessonId = id,
+        //        CoachId = coachId
+        //    };
+        //    db.Add(enrollment);
         //    var lesson = await db.Lessons.FindAsync(enrollment.LessonId);
-        //await db.SaveChangesAsync();
+        //    await db.SaveChangesAsync();
         //    return View("Index");
         //}
 

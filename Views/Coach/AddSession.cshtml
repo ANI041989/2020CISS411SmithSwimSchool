@@ -1,8 +1,8 @@
 ﻿@model Project1.Models.Session
-
-<h2>Create a new session</h2>
-<form asp-controller="Coach" asp-action="AddSession"
-      method="post">
+<p>Create a new session.</p>
+<form asp-controller="Coach" asp-action="AddSession" method="post">
+    <input asp-for="SessionId" type="hidden"/>
+    <input asp-for="CoachId" type="hidden"/>
     <label asp-for="StartDate"></label>
     <input asp-for="StartDate" />
     <br />
@@ -14,10 +14,6 @@
     <br />
     <label asp-for="DailyStartTime"></label>
     <input asp-for="DailyStartTime" />
-    <br />
-    <input asp-for="CoachId" type="hidden" />
-    <br />
-    <input asp-for="LessonId" type="hidden" />
     <br />
     <button type="submit">Add Session</button>
 </form>

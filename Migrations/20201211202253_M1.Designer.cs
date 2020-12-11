@@ -10,8 +10,8 @@ using Project1.Models;
 namespace Project1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201210200923_M2")]
-    partial class M2
+    [Migration("20201211202253_M1")]
+    partial class M1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,21 @@ namespace Project1.Migrations
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.0");
+
+            modelBuilder.Entity("LessonSession", b =>
+                {
+                    b.Property<int>("LessonsLessonId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SessionsSessionId")
+                        .HasColumnType("int");
+
+                    b.HasKey("LessonsLessonId", "SessionsSessionId");
+
+                    b.HasIndex("SessionsSessionId");
+
+                    b.ToTable("LessonSession");
+                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -293,26 +308,12 @@ namespace Project1.Migrations
                     b.Property<int>("CoachId")
                         .HasColumnType("int");
 
-                    b.Property<string>("DailyStartTime")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("EndDate")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("LessonId")
-                        .HasColumnType("int");
-
                     b.Property<int>("SeatCapacity")
                         .HasColumnType("int");
-
-                    b.Property<string>("StartDate")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("SessionId");
 
                     b.HasIndex("CoachId");
-
-                    b.HasIndex("LessonId");
 
                     b.ToTable("Sessions");
                 });
@@ -335,6 +336,21 @@ namespace Project1.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Swimmers");
+                });
+
+            modelBuilder.Entity("LessonSession", b =>
+                {
+                    b.HasOne("Project1.Models.Lesson", null)
+                        .WithMany()
+                        .HasForeignKey("LessonsLessonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Project1.Models.Session", null)
+                        .WithMany()
+                        .HasForeignKey("SessionsSessionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -424,15 +440,7 @@ namespace Project1.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Project1.Models.Lesson", "Lesson")
-                        .WithMany("Sessions")
-                        .HasForeignKey("LessonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Coach");
-
-                    b.Navigation("Lesson");
                 });
 
             modelBuilder.Entity("Project1.Models.Swimmer", b =>
@@ -445,11 +453,6 @@ namespace Project1.Migrations
                 });
 
             modelBuilder.Entity("Project1.Models.Coach", b =>
-                {
-                    b.Navigation("Sessions");
-                });
-
-            modelBuilder.Entity("Project1.Models.Lesson", b =>
                 {
                     b.Navigation("Sessions");
                 });
