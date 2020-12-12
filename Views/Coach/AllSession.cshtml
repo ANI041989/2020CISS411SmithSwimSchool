@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Project1.Models.Session>
+@{
+    if (Model.Count() < 1)
+    {
+        <p>No session in database yet.</p>
+    }
+    else
+    {
+        <h3>All Session</h3>
+        <table border="1">
+            <tr>
+                
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Start Time</th>
+                <th>Available Seats</th>
+
+            </tr>
+            @foreach (var s in Model)
+            {
+                <tr>
+                    
+                    <td>@s.StartDate</td>
+                    <td>@s.EndDate</td>
+                    <td>@s.DailyStartTime</td>
+                    <td>@s.SeatCapacity</td>
+                </tr>
+            }
+        </table>
+    }
+}

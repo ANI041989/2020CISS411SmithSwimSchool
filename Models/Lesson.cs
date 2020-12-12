@@ -10,8 +10,6 @@ namespace Project1.Models
         public int LessonId { get; set; }
         public string SkillLevel { get; set; }
         public double Tuition { get; set; }
-        public int CoachId { get; set; }
-        public int Coach { get; set; }
         public ICollection<Session> Sessions { get; set; }
     }
 }

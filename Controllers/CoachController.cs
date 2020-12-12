@@ -71,67 +71,38 @@ namespace Project1.Controllers
 
         public IActionResult AddSession()
         {
-            Session session = new Session();
-            var currentUserId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
-            session.CoachId = db.Coachs.SingleOrDefault(i => i.UserId == currentUserId).CoachId;
-            return View(session);
+            return View();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> AddSession(Session session)
-        {
-            db.Add(session);
-            await db.SaveChangesAsync();
-            return RedirectToAction("Index", "Instructor");
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //public async Task<IActionResult> AddSession()
-        //{
-        //    var session = await db.Lessons.Include
-        //        (c => c.Coach).ToListAsync();
-        //    return View(session);
-        //}
-
-        //public async Task<IActionResult> EnrollSession(int id)
+        //[HttpPost]
+        //public async Task<IActionResult> AddSession(string startDate, string endDate, string dailyStartTime, int seatCapacity)
         //{
         //    var currentUserId = this.User.FindFirst
-        //        (ClaimTypes.NameIdentifier).Value;
+        //       (ClaimTypes.NameIdentifier).Value;
         //    var coachId = db.Coachs.FirstOrDefault
-        //    (s => s.UserId == currentUserId).CoachId;
-        //    Enrollment enrollment = new Enrollment
+        //        (s => s.UserId == currentUserId).CoachId;
+        //    Session session = new Session
         //    {
-        //        LessonId = id,
-        //        CoachId = coachId
+        //        StartDate = startDate,
+        //        EndDate = endDate,
+        //        DailyStartTime = dailyStartTime,
+        //        SeatCapacity = seatCapacity
         //    };
-        //    db.Add(enrollment);
-        //    var lesson = await db.Lessons.FindAsync(enrollment.LessonId);
+        //    db.Add(session);
+        //    var Session = await db.Sessions.FindAsync
+        //        (session.SessionId);
+
         //    await db.SaveChangesAsync();
-        //    return View("Index");
+        //    return View("AddSession");
         //}
+
+
+        public async Task<IActionResult> AllSession()
+        {
+            var session = await db.Sessions.Include
+                 (s => s.Coach).ToListAsync();
+            return View(session);
+        }
 
 
         public IActionResult Index()

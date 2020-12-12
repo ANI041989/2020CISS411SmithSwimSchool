@@ -15,9 +15,6 @@ namespace Project1.Models
         
         public int SeatCapacity { get; set; }
         public string DailyStartTime { get; set; }
-        public virtual ApplicationUser User { get; set; }
-
         public ICollection<Enrollment> Enrollments { get; set; }
-        public ICollection<Lesson> Lessons { get; set; }
     }
 }
