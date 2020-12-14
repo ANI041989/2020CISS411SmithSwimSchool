@@ -90,7 +90,7 @@ namespace Project1.Controllers
         public async Task<IActionResult> AllSession()
         {
             var session = await db.Sessions.Include
-                 (s => s.CoachName).ToListAsync();
+                 (s => s.Coach).ToListAsync();
             return View(session);
         }
 

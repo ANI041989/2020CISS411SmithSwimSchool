@@ -61,10 +61,9 @@ namespace Project1.Controllers
         public async Task<IActionResult> AllSession()
 		{
             var session = await db.Sessions.Include
-                (s => s.CoachName).ToListAsync();
+                (s => s.Coach).ToListAsync();
             return View(session);
 		}
-        [HttpPost]
         public async Task<IActionResult> EnrollSession(int id)
         {
             var currentUserId = this.User.FindFirst
@@ -79,7 +78,7 @@ namespace Project1.Controllers
             db.Add(enrollment);
             var session = await db.Sessions.FindAsync
                 (enrollment.SessionId);
-
+            session.SeatCapacity--;
             await db.SaveChangesAsync();
             return View("Index");
         }
