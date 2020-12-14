@@ -61,9 +61,10 @@ namespace Project1.Controllers
         public async Task<IActionResult> AllSession()
 		{
             var session = await db.Sessions.Include
-                (s => s.Coach).ToListAsync();
+                (s => s.CoachName).ToListAsync();
             return View(session);
 		}
+        [HttpPost]
         public async Task<IActionResult> EnrollSession(int id)
         {
             var currentUserId = this.User.FindFirst

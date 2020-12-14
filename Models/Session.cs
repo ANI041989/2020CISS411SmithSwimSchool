@@ -9,7 +9,7 @@ namespace Project1.Models
     {
         public int SessionId { get; set; }
         public int CoachId { get; set; }
-        public Coach Coach { get; set; }
+        public Coach CoachName { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }
         
