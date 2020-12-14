@@ -3,13 +3,13 @@
 <table border="1">
     <tr>
         <th>Session Title</th>
-        <th>Grades</th>
+        <th>Grade</th>
     </tr>
     @foreach (var s in Model)
     {
         <tr>
             <td>@s.Session.SessionId</td>
-            <td>@Html.DisplayFor(m => s.ProgressReport)</td>
+            <td>@Html.DisplayFor(m => s.LetterGrade)</td>
         </tr>
     }
 </table>

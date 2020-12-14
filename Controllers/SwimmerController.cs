@@ -58,6 +58,11 @@ namespace Project1.Controllers
             await db.SaveChangesAsync();
             return View(swimmer);
         }
+        public IActionResult Index()
+        {
+            return View();
+        }
+
         public async Task<IActionResult> AllSession()
 		{
             var session = await db.Sessions.Include
@@ -85,20 +90,14 @@ namespace Project1.Controllers
         public async Task<IActionResult> CheckGrade()
 		{
             ClaimsPrincipal currentUser = this.User;
-            var currentUserId = currentUser.FindFirst
-                (ClaimTypes.NameIdentifier).Value;
+            var currentUserId = currentUser.FindFirst(ClaimTypes.NameIdentifier).Value;
             if (currentUserId == null)
 			{
                 return NotFound();
 			}
-            var swimmer = await db.Swimmers
-                .SingleOrDefaultAsync
-                (s => s.UserId == currentUserId);
+            var swimmer = await db.Swimmers.SingleOrDefaultAsync(s => s.UserId == currentUserId);
             var swimmerId = swimmer.SwimmerId;
-            var allSessions = await db.Enrollments
-                .Include(e => e.Session).Where
-                (c => c.SwimmerId == swimmerId)
-                .ToListAsync();
+            var allSessions = await db.Enrollments.Include(e => e.Session).Where(c => c.SwimmerId == swimmerId).ToListAsync();
             if (allSessions == null)
 			{
                 return NotFound();
@@ -106,11 +105,7 @@ namespace Project1.Controllers
             ViewData["sname"] = swimmer.SwimmerName;
             return View(allSessions);
 		}
-        public IActionResult Index()
-        {
-            return View();
-        }
-
+       
 
     }
 }

@@ -11,9 +11,16 @@ namespace Project1.Models
         public int EnrollmentId { get; set; }
         public int SwimmerId { get; set; }
         public int SessionId { get; set; }
-        public string ProgressReport { get; set; }
         public Swimmer Swimmer { get; set; }
         public Session Session { get; set; }
+
+        [DisplayFormat(NullDisplayText = "No grade.")]
+        public LetterGrade? LetterGrade { get; set; }
     }
-    
+    public enum LetterGrade
+    {
+        A, B, C, D, F, I, W, P
+    }
 }
+    
+

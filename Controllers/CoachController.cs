@@ -99,5 +99,46 @@ namespace Project1.Controllers
         {
             return View();
         }
+
+
+
+
+
+        public async Task<IActionResult> SessionByCoach()
+        {
+            var currentUserId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var CoachId = db.Coachs.SingleOrDefault(i => i.UserId == currentUserId).CoachId;
+            var session = await db.Sessions.Where(i => i.CoachId == CoachId).ToListAsync();
+            return View(session);
+        }
+
+
+        public async Task<IActionResult> PostGrade(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var allSwimmers = await db.Enrollments.Include(c => c.Session).Where(c => c.SessionId == id).ToListAsync();
+            if (allSwimmers == null)
+            {
+                return NotFound();
+            }
+            return View(allSwimmers);
+
+        }
+
+        [HttpPost]
+        public IActionResult PostGrade(List<Enrollment> enrollments)
+        {
+            foreach (var enrollment in enrollments)
+            {
+                var er = db.Enrollments.Find(enrollment.EnrollmentId);
+                er.LetterGrade = enrollment.LetterGrade;
+            }
+            db.SaveChanges();
+            return RedirectToAction("SessionByCoach");
+
+        }
     }
 }
