@@ -71,30 +71,20 @@ namespace Project1.Controllers
 
         public IActionResult AddSession()
         {
-            return View();
+            Session session = new Session();
+            var coachId = this.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            session.CoachId = db.Coachs.SingleOrDefault(i => i.UserId == coachId).CoachId;
+            return View(session);
+           
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> AddSession(string startDate, string endDate, string dailyStartTime, int seatCapacity)
-        //{
-        //    var currentUserId = this.User.FindFirst
-        //       (ClaimTypes.NameIdentifier).Value;
-        //    var coachId = db.Coachs.FirstOrDefault
-        //        (s => s.UserId == currentUserId).CoachId;
-        //    Session session = new Session
-        //    {
-        //        StartDate = startDate,
-        //        EndDate = endDate,
-        //        DailyStartTime = dailyStartTime,
-        //        SeatCapacity = seatCapacity
-        //    };
-        //    db.Add(session);
-        //    var Session = await db.Sessions.FindAsync
-        //        (session.SessionId);
-
-        //    await db.SaveChangesAsync();
-        //    return View("AddSession");
-        //}
+        [HttpPost]
+        public async Task<IActionResult> AddSession(Session session)
+        {
+            db.Add(session);
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index", "Coach");
+        }
 
 
         public async Task<IActionResult> AllSession()
