@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<Project1.Models.Session>
-<h2>@Model.FirstOrDefault().Coach.CoachName</h2>
+<h2>Coach: @Model.FirstOrDefault().Coach.CoachName</h2>
 @{ 
     if (Model.Count() < 1)
     {

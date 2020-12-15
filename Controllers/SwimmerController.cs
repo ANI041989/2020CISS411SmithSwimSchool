@@ -56,7 +56,7 @@ namespace Project1.Controllers
                 db.Add(swimmer);
             }
             await db.SaveChangesAsync();
-            return View(swimmer);
+            return View("Index");
         }
         public IActionResult Index()
         {
