@@ -41,7 +41,7 @@ namespace Project1.Controllers
         {
             db.Add(lesson);
             await db.SaveChangesAsync();
-            return RedirectToAction("AddLesson");
+            return RedirectToAction("AllLesson");
         }
 
 

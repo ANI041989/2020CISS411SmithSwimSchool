@@ -15,12 +15,12 @@ namespace Project1.Models
         public Session Session { get; set; }
 
         [DisplayFormat(NullDisplayText = "No grade.")]
-        public LetterGrade? LetterGrade { get; set; }
+        public string LetterGrade { get; set; }
     }
-    public enum LetterGrade
-    {
-        A, B, C, D, F, I, W, P
-    }
+    //public enum LetterGrade
+    //{
+    //    A, B, C, D, F, I, W, P
+    //}
 }
     
 
