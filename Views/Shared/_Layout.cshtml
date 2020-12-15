@@ -5,10 +5,19 @@
     <title>Project1</title>
 </head>
 <body>
+
     @RenderBody()
     <hr />
     <footer>
+        
         <p>&copy; @DateTime.Now.Year -Alexander, Inthaluexay, Lapham, Payne</p>
+        @if (this.User.Identity.IsAuthenticated)
+    {
+        <div>Welcome, @this.User.Identity.Name. </div>
+        <form method="post" asp-controller="Account" asp-action="Logout">
+            <input type="submit" value="Logout" />
+        </form>
+    }
     </footer>
 </body>
 </html>

@@ -1,7 +1,7 @@
 ﻿@model Project1.ViewModels.AccountLoginViewModel
 
 <h1>Smith Swim School</h1>
-<form asp-action="Login" method="post">
+<form  asp-action="Login" method="post">
     <div asp-validation-summary="All"></div>
     <label asp-for="Email"></label>
     <input asp-for="Email" />
@@ -12,9 +12,9 @@
     <span asp-validation-for="Password"></span>
     <br />
     <button type="submit">Log In</button>
+  
     <br />
-    <br />
-   <h3>Don't have an accout with Smith Swim School yet?</h3> 
-<button type="submit"><a asp-controller="Account" asp-action="Register">Register Here</a></button>
+   <h4>Don't have an account with Smith Swim School yet?<br /><button type="submit"> <a asp-controller="Account" asp-action="Register">Register Here</a></button></h4> 
+
    
 </form>
