@@ -10,7 +10,7 @@ using Project1.Models;
 namespace Project1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201215180903_M1")]
+    [Migration("20201214193149_M1")]
     partial class M1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

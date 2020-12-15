@@ -10,7 +10,7 @@ using Project1.Models;
 
 namespace Project1.Controllers
 {
-    
+    [Authorize(Roles="Coach")]
     public class CoachController : Controller
     {
         private readonly ApplicationDbContext db;
@@ -38,16 +38,6 @@ namespace Project1.Controllers
             return View(coach);
 
         }
-
-        public IActionResult Profile(int id)
-        {
-            Coach coach = db.Coachs.Find(id);
-            return View(coach);
-        }
-
-
-
-
         [HttpPost]
         public async Task<IActionResult> AddProfile
             (Coach coach)
@@ -129,8 +119,7 @@ namespace Project1.Controllers
             {
                 return NotFound();
             }
-            var allSwimmers = await db.Enrollments.Include(c => c.Session).Where(c => c.SessionId == id).Include
-                (s => s.Swimmer).ToListAsync();
+            var allSwimmers = await db.Enrollments.Include(c => c.Session).Where(c => c.SessionId == id).ToListAsync();
             if (allSwimmers == null)
             {
                 return NotFound();
