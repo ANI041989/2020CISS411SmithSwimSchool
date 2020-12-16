@@ -245,8 +245,8 @@ namespace Project1.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int?>("LetterGrade")
-                        .HasColumnType("int");
+                    b.Property<string>("LetterGrade")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SessionId")
                         .HasColumnType("int");

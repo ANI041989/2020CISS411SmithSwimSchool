@@ -10,8 +10,8 @@ using Project1.Models;
 namespace Project1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201214193149_M1")]
-    partial class M1
+    [Migration("20201216143505_M2")]
+    partial class M2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -247,8 +247,8 @@ namespace Project1.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int?>("LetterGrade")
-                        .HasColumnType("int");
+                    b.Property<string>("LetterGrade")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SessionId")
                         .HasColumnType("int");

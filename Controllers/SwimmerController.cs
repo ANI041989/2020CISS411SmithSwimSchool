@@ -58,6 +58,14 @@ namespace Project1.Controllers
             await db.SaveChangesAsync();
             return View("Index");
         }
+
+        public IActionResult Profile(int id)
+        {
+            Swimmer swimmer = db.Swimmers.Find(id);
+            return View(swimmer);
+        }
+
+
         public IActionResult Index()
         {
             return View();

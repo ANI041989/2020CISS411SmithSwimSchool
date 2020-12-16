@@ -18,9 +18,8 @@
             {
                 <tr>
                     <td>@s.SessionId</td>
-                    <td>@s.Coach.CoachName</td>
+                    <td><a asp-controller="Coach" asp-action="Profile" asp-route-id="@s.Coach.CoachId">@s.Coach.CoachName</a>
                     <td>@s.SeatCapacity</td>
-                    
                     <td>
                         @{ 
                             if (s.SeatCapacity < 1)

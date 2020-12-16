@@ -387,3 +387,5 @@ C:\Users\ameei\Source\Repos\ANI041989\2020CISS411SmithSwimSchool\obj\Debug\netco
 C:\Users\ameei\Source\Repos\ANI041989\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Coach\SessionByCoach.cshtml.g.cs
 C:\Users\ameei\Source\Repos\ANI041989\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Swimmer\CheckGrade.cshtml.g.cs
 C:\Users\ameei\Source\Repos\ANI041989\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Coach\PostGrade.cshtml.g.cs
+C:\Users\ameei\Source\Repos\ANI041989\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Swimmer\Profile.cshtml.g.cs
+C:\Users\ameei\Source\Repos\ANI041989\2020CISS411SmithSwimSchool\obj\Debug\netcoreapp3.1\Razor\Views\Coach\Profile.cshtml.g.cs

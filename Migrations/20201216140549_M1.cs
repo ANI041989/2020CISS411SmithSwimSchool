@@ -245,7 +245,7 @@ namespace Project1.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     SwimmerId = table.Column<int>(type: "int", nullable: false),
                     SessionId = table.Column<int>(type: "int", nullable: false),
-                    LetterGrade = table.Column<int>(type: "int", nullable: true)
+                    LetterGrade = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
