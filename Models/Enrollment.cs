@@ -17,10 +17,10 @@ namespace Project1.Models
         [DisplayFormat(NullDisplayText = "No grade.")]
         public string LetterGrade { get; set; }
     }
-    //public enum LetterGrade
-    //{
-    //    A, B, C, D, F, I, W, P
-    //}
+    public enum LetterGrade
+    {
+        A, B, C, D, F, I, W, P
+    }
 }
-    
+
 
